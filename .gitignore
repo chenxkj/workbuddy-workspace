@@ -1,0 +1,36 @@
+# WorkBuddy 配置文件
+.workbuddy/
+
+# 缓存
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+.npm/
+.pnpm/
+
+# 日志
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python 虚拟环境
+venv/
+env/
+.venv/
+
+# 秘钥文件（不要同步）
+.env
+*.pem
+*.key
