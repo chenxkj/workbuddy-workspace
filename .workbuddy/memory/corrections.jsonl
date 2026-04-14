@@ -1,0 +1,2 @@
+{"ts":"2026-04-14","type":"correction","topic":"脚本结尾","wrong":"老陈说实话，就这样","correct":"我是老陈，只说真话。","source":"老陈反馈"}
+{"ts":"2026-04-14","type":"correction","topic":"记忆架构","wrong":"MEMORY.md无限追加，内存无限膨胀","correct":"改用JSONL+INDEX结构，固定文件只增不覆盖","source":"任务优化"}

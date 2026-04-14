@@ -1,0 +1,2 @@
+{"ts":"2026-04-13","type":"error","action":"delete_file","target":"brain目录旧文件","error":"工具无法操作AppData目录文件","fix":"改用PowerShell命令删除AppData目录文件"}
+{"ts":"2026-04-14","type":"error","topic":"记忆架构","error":"MEMORY.md采用末尾追加，长期运行无限膨胀","fix":"改用JSONL增量追加+INDEX.md固定索引结构"}
