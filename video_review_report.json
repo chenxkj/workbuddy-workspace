@@ -1,0 +1,176 @@
+{
+  "video": "F:\\自媒体\\014三明学院对新人说\\4月18日.mp4",
+  "duration_seconds": 36,
+  "frames_analyzed": 8,
+  "frame_analysis": [
+    {
+      "frame": 0,
+      "time": 0,
+      "resolution": "1440x2560",
+      "brightness": "56.0%",
+      "avg_saturation": "45.9",
+      "bright_pixel_ratio": "0.00%",
+      "has_grid_pattern": true,
+      "warning": [
+        "检测到网格图案(可能是二维码)"
+      ]
+    },
+    {
+      "frame": 1,
+      "time": 5,
+      "resolution": "1440x2560",
+      "brightness": "55.5%",
+      "avg_saturation": "40.3",
+      "bright_pixel_ratio": "0.14%",
+      "has_grid_pattern": false,
+      "warning": []
+    },
+    {
+      "frame": 2,
+      "time": 10,
+      "resolution": "1440x2560",
+      "brightness": "56.0%",
+      "avg_saturation": "41.2",
+      "bright_pixel_ratio": "0.36%",
+      "has_grid_pattern": true,
+      "warning": [
+        "检测到网格图案(可能是二维码)"
+      ]
+    },
+    {
+      "frame": 3,
+      "time": 15,
+      "resolution": "1440x2560",
+      "brightness": "55.5%",
+      "avg_saturation": "39.4",
+      "bright_pixel_ratio": "0.19%",
+      "has_grid_pattern": false,
+      "warning": []
+    },
+    {
+      "frame": 4,
+      "time": 20,
+      "resolution": "1440x2560",
+      "brightness": "55.7%",
+      "avg_saturation": "39.6",
+      "bright_pixel_ratio": "0.36%",
+      "has_grid_pattern": true,
+      "warning": [
+        "检测到网格图案(可能是二维码)"
+      ]
+    },
+    {
+      "frame": 5,
+      "time": 25,
+      "resolution": "1440x2560",
+      "brightness": "55.4%",
+      "avg_saturation": "40.1",
+      "bright_pixel_ratio": "0.11%",
+      "has_grid_pattern": false,
+      "warning": []
+    },
+    {
+      "frame": 6,
+      "time": 30,
+      "resolution": "1440x2560",
+      "brightness": "55.2%",
+      "avg_saturation": "39.6",
+      "bright_pixel_ratio": "0.35%",
+      "has_grid_pattern": true,
+      "warning": [
+        "检测到网格图案(可能是二维码)"
+      ]
+    },
+    {
+      "frame": 7,
+      "time": 35,
+      "resolution": "1440x2560",
+      "brightness": "54.9%",
+      "avg_saturation": "39.4",
+      "bright_pixel_ratio": "0.08%",
+      "has_grid_pattern": false,
+      "warning": []
+    }
+  ],
+  "texts_per_frame": [
+    {
+      "frame": 0,
+      "time": 0,
+      "texts": [
+        "三明学院出身",
+        "我只说三个字:  做起来"
+      ]
+    },
+    {
+      "frame": 1,
+      "time": 5,
+      "texts": [
+        "觉得不是985211"
+      ]
+    },
+    {
+      "frame": 2,
+      "time": 10,
+      "texts": [
+        "最近很多同学私信我说对未来迷茫",
+        "MIN"
+      ]
+    },
+    {
+      "frame": 3,
+      "time": 15,
+      "texts": [
+        "别纠结先做起来"
+      ]
+    },
+    {
+      "frame": 4,
+      "time": 20,
+      "texts": [
+        "比你原地想一万条路有用的多"
+      ]
+    },
+    {
+      "frame": 5,
+      "time": 25,
+      "texts": [
+        "而是先做起来"
+      ]
+    },
+    {
+      "frame": 6,
+      "time": 30,
+      "texts": [
+        "已经把学习的门槛压到最低"
+      ]
+    },
+    {
+      "frame": 7,
+      "time": 35,
+      "texts": [
+        "我是老陈"
+      ]
+    }
+  ],
+  "violations": [
+    {
+      "frame": 2,
+      "time": 10,
+      "word": "私信",
+      "full_text": "最近很多同学私信我说对未来迷茫",
+      "severity": "HIGH"
+    },
+    {
+      "frame": 4,
+      "time": 20,
+      "word": "万",
+      "full_text": "比你原地想一万条路有用的多",
+      "severity": "MEDIUM"
+    }
+  ],
+  "warnings": [
+    "⚠️ 检测到 2 处疑似违规内容",
+    "🚨 高危: 帧 [2] 包含高风险词"
+  ],
+  "pass": false
+}
