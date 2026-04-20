@@ -1,2 +1,4 @@
 {"ts":"2026-04-13","type":"error","action":"delete_file","target":"brain目录旧文件","error":"工具无法操作AppData目录文件","fix":"改用PowerShell命令删除AppData目录文件"}
 {"ts":"2026-04-14","type":"error","topic":"记忆架构","error":"MEMORY.md采用末尾追加，长期运行无限膨胀","fix":"改用JSONL增量追加+INDEX.md固定索引结构"}
+{"ts":"2026-04-20","type":"error","action":"replace_in_file","error":"old_str包含行号前缀或多余空白导致匹配失败","fix":"匹配失败后重读文件，找准old_str的确切文字（无行号前缀），减少old_str范围从整段到1-2行"}
+{"ts":"2026-04-20","type":"error","action":"replace_in_file","error":"文件末尾有空行但old_str包含换行符导致匹配失败","fix":"重读文件确认末尾实际内容；删除old_str尾部多余换行符；有时空字符串""反而能成功匹配"}

@@ -1,2 +1,6 @@
 {"ts":"2026-04-14","type":"correction","topic":"脚本结尾","wrong":"老陈说实话，就这样","correct":"我是老陈，只说真话。","source":"老陈反馈"}
 {"ts":"2026-04-14","type":"correction","topic":"记忆架构","wrong":"MEMORY.md无限追加，内存无限膨胀","correct":"改用JSONL+INDEX结构，固定文件只增不覆盖","source":"任务优化"}
+{"ts":"2026-04-20","type":"correction","topic":"文案人设语言","wrong":"后来我学聪明了","correct":"后来我发现了规律","source":"D13脚本·老陈反馈","lesson":"42岁研发总监不该自贬，改体现分析型人设"}
+{"ts":"2026-04-20","type":"correction","topic":"评分幻觉","wrong":"预评分95分S级","correct":"逐字稿核对后实际89分A","source":"D15审核·数据验证","lesson":"评分必须引用脚本逐字稿，不引用设计意图"}
+{"ts":"2026-04-20","type":"correction","topic":"封面≠开头","wrong":"封面好=开头没问题","correct":"封面决定点击率，开头决定完播率，是两件事","source":"D15数据复盘·播放5991完播3.35%","lesson":"每条视频单独检查前2秒钩子"}
+{"ts":"2026-04-20","type":"correction","topic":"合规陈述句","wrong":"\"私信我说\"是陈述事实无违规","correct":"陈述句中的私信仍触发机器审核","source":"D15审核","lesson":"高危词即使在陈述句中也需替换"}
