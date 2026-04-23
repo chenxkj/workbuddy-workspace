@@ -1,5 +1,16 @@
 # Git自动同步执行记录
 
+## 网络问题分析（2026-04-23）
+- **现象**: push到github.com:443反复Connection reset/超时，但浏览器打开GitHub后再push立即成功
+- **根因**: 网络中间设备（防火墙/NAT/运营商）对新TCP连接有阻断或超时，已建立连接可复用
+- **改进**: push前先curl探测github.com连通性，不通则等30秒重试，最多3轮
+
+## 2026-04-23 13:43
+- 状态: ✅ 成功
+- 变更: 8 files, 2085 insertions/19 deletions（含第24期方案、NLP程序员情商编码方案等）
+- 推送: 9fcfcfa..0dbd727 master -> master
+- 备注: 首次push失败（Connection reset），13:46重试成功，积压8天commit全部推送完毕
+
 ## 2026-04-22 22:00
 - 状态: commit成功，push失败
 - 变更: 20 files, 4158 insertions/729 deletions（含第22-23期方案、模板v2.2-v2.5等）
