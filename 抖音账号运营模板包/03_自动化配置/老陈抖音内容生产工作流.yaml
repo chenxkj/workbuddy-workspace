@@ -7,7 +7,9 @@
 # 流程：
 #   Step 1: 抖音策略师 → 选题评估+风险判断
 #   Step 2: 内容创作专家 → 输出12项交付物
-#   Step 3: 数据分析报告师（可选） → 发布后数据复盘
+#   Step 3: 去AI味（humanizer-zh） → 消除AI写作痕迹
+#   Step 4: 查违禁词（douyin-sensitive-check） → 合规检测
+#   Step 5: 数据分析报告师（可选） → 发布后数据复盘
 #
 # 账号背景（必须始终携带）：
 #   人设：42岁，19年嵌入式研发总监，管过33人团队，三明学院毕业
@@ -17,8 +19,8 @@
 #   预算：冷启动期月≤300元，单条≤100元
 
 name: 老陈抖音内容生产工作流
-version: "2.0"
-description: 老陈抖音账号标准化内容生产工作流：选题评估→方案输出→数据复盘全流程
+version: "3.0"
+description: 老陈抖音账号标准化内容生产工作流：选题评估→方案输出→去AI味→查违禁词→数据复盘全流程
 author: 老陈抖音运营团队
 tags:
   - 抖音
@@ -172,8 +174,76 @@ steps:
       deliverable_11: 优化前后对比
       deliverable_12: 复盘模板
 
+    # ============================================================
+  # STEP 3：去AI味（humanizer-zh skill）
+  # 对逐字稿/描述文案/标题执行AI痕迹去除
   # ============================================================
-  # STEP 3：数据分析报告师（可选，手动触发）
+  - name: 去AI味
+    agent: 内容创作专家
+    depends_on: 内容创作
+    description: 对逐字稿/标题/描述文案执行AI味去除，让人听起来像真人说话
+
+    context:
+      ai_traces_to_fix: |
+        必须修复的AI痕迹模式：
+        - 夸大的象征意义
+        - 宣传性语言（"值得注意的是"/"从某种程度上"）
+        - 以-ing结尾的肤浅分析
+        - 模糊的归因
+        - 破折号过度使用
+        - 三段式法则（"首先/其次/最后"）
+        - AI特征词汇（"让我们"/"接下来"/"因此"）
+        - 否定式排比
+        - 过多连接性短语
+        - 结尾硬升华
+
+    inputs:
+      raw_script: "${steps.内容创作.outputs.deliverable_02}"
+      raw_titles: "${steps.内容创作.outputs.deliverable_06}"
+      raw_description: "${steps.内容创作.outputs.deliverable_08}"
+
+    tasks:
+      - 逐字稿去AI味：处理后读一遍，感觉像朋友在跟你聊天
+      - 标题去AI味：确保标题口语化，无AI感
+      - 描述文案去AI味：自然流畅，无营销腔
+      - 输出去AI味修复清单（说明修了哪些痕迹）
+
+    outputs:
+      deai_script: 去AI味后的逐字稿
+      deai_titles: 去AI味后的标题×5
+      deai_description: 去AI味后的描述文案
+      traces_removed: 修复的AI痕迹清单
+
+  # ============================================================
+  # STEP 4：查违禁词（douyin-sensitive-check skill）
+  # 对去AI味后的文本执行违禁词检测，确保合规
+  # ============================================================
+  - name: 查违禁词
+    agent: 内容创作专家
+    depends_on: 去AI味
+    description: 对去AI味后的文本执行抖音违禁词检测，确保合规发布
+
+    inputs:
+      script_to_check: "${steps.去AI味.outputs.deai_script}"
+      titles_to_check: "${steps.去AI味.outputs.deai_titles}"
+      description_to_check: "${steps.去AI味.outputs.deai_description}"
+
+    tasks:
+      - 逐字稿违禁词检测：扫描禁用词/绝对词/引战词
+      - 标题违禁词检测：确保标题合规
+      - 描述文案违禁词检测：检查营销引流话术
+      - 违禁词处理：有则替换/删除 → 重新检测 → 确认通过
+
+    outputs:
+      violation_report: 违禁词检测报告（三份：逐字稿/标题/描述）
+      violations_found: 发现的违禁词列表（若无则为空）
+      final_script: 合规通过版逐字稿（可直接发布）
+      final_titles: 合规通过版标题
+      final_description: 合规通过版描述文案
+      publish_ready: 是否通过（true/false）
+
+  # ============================================================
+  # STEP 5：数据分析报告师（可选，手动触发）
   # 视频发布后，基于实际数据复盘，给出策略调整
   # ============================================================
   - name: 数据复盘
@@ -189,6 +259,8 @@ steps:
       video_metrics: 播放量/完播率/互动率/涨粉数/收藏数/转发数
       planned_metrics: "${steps.内容创作.outputs.deliverable_04}"
       actual_metrics: 由用户提供实际数据
+      deai_results: "${steps.去AI味.outputs.traces_removed}"
+      violation_results: "${steps.查违禁词.outputs.violations_found}"
 
     tasks:
       - 对比流量预计与实际数据

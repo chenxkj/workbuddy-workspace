@@ -13,8 +13,8 @@
 #   数据分析报告师（可选）：发布后数据复盘、策略调整建议
 
 name = "老陈抖音内容生产工作流"
-version = "2.0"
-description = "老陈抖音账号标准化内容生产工作流，含选题评估→方案输出→数据复盘全流程"
+version = "3.0"
+description = "老陈抖音账号标准化内容生产工作流，含选题评估→方案输出→去AI味→查违禁词→数据复盘全流程"
 author = "老陈抖音运营团队"
 tags = ["抖音", "内容生产", "职场", "AI"]
 
@@ -98,8 +98,68 @@ deliverable_11 = "优化前后对比（本次改进点记录）"
 deliverable_12 = "复盘模板（下期改进方向框架）"
 
 # ============================================================
-# STEP 3：数据分析报告师（可选，发布后触发）
+# STEP 3：去AI味（humanizer-zh skill）
 # ============================================================
+[[steps]]
+name = "去AI味"
+agent = "内容创作专家"
+capability = "humanizer-zh"
+depends_on = ["内容创作"]
+description = "对逐字稿/描述文案/标题执行AI味去除，让人听起来像真人说话"
+
+[steps.inputs]
+raw_text = "${steps.内容创作.outputs.deliverable_02}"
+titles = "${steps.内容创作.outputs.deliverable_06}"
+description = "${steps.内容创作.outputs.deliverable_08}"
+
+[steps.outputs]]
+deai_text = "去AI味后的逐字稿（口语化，无AI痕迹）"
+deai_titles = "去AI味后的标题"
+deai_description = "去AI味后的描述文案"
+ai_traces_removed = "修复的AI痕迹清单（如：三段式/-ing结尾/AI词汇/夸大表达等）"
+
+# ============================================================
+# STEP 4：查违禁词（douyin-sensitive-check skill）
+# ============================================================
+[[steps]]
+name = "查违禁词"
+agent = "内容创作专家"
+capability = "douyin-sensitive-check"
+depends_on = ["去AI味"]
+description = "对去AI味后的文本执行抖音违禁词检测，确保合规发布"
+
+[steps.inputs]
+text_to_check = "${steps.去AI味.outputs.deai_text}"
+titles_to_check = "${steps.去AI味.outputs.deai_titles}"
+description_to_check = "${steps.去AI味.outputs.deai_description}"
+
+[steps.outputs]]
+violation_report = "违禁词检测报告（逐字稿/标题/描述各一份）"
+violations_found = "发现的违禁词列表（若无则为空）"
+final_pass_text = "合规通过版本（可直接发布）"
+publish_ready = "是否通过（true/false）"
+
+# ============================================================
+# STEP 5：数据分析报告师（可选，发布后触发）
+# ============================================================
+[[steps]]
+name = "数据复盘"
+agent = "数据分析报告师"
+capability = "data-analysis"
+required = false
+trigger = "manual"  # 手动触发（视频发布后）
+description = "基于视频发布数据，进行复盘分析并输出策略调整建议"
+
+[steps.inputs]
+video_metrics = "播放量/完播率/互动率/涨粉数/收藏数/转发数"
+content_plan = "${steps.内容创作.outputs.deliverable_01-12}"
+account_context = "账号当前阶段（冷启动/起量/爆发/成熟）"
+
+[steps.outputs]]
+data_report = "数据复盘报告（对比流量预计+实际数据，逐指标分析）"
+strategy_adjustment = "策略调整建议（下期优化方向）"
+budget_roi_analysis = "本期投放ROI分析（若有投放）"
+next_episode_suggestion = "下期选题方向建议"
 [[steps]]
 name = "数据复盘"
 agent = "数据分析报告师"
