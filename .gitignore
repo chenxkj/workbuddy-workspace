@@ -30,6 +30,9 @@ venv/
 env/
 .venv/
 
+# Windows 特殊文件
+nul
+
 # 秘钥文件（不要同步）
 .env
 *.pem
