@@ -28,7 +28,13 @@
   "consecutive_directional_errors": [],
   "pending_retros": [],
   "shoots": [],
-  "in_progress_session": null,
+  "in_progress_session": {
+    "type": "prediction",
+    "file": "predictions/2026-05-07_f95a006c1ad2_裁员不是能力审判.md",
+    "video_folder": null,
+    "started_at": "2026-05-07T14:37:00+08:00",
+    "rubric_version": "v1.0"
+  },
   "initialized_at": "2026-05-06T10:19:00+08:00",
   "laochen_integration": {
     "laochen_skill_version": "v5.7",
