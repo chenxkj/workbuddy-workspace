@@ -30,10 +30,10 @@
   "shoots": [],
   "in_progress_session": {
     "type": "prediction",
-    "file": "predictions/2026-05-07_f95a006c1ad2_裁员不是能力审判.md",
+    "file": "predictions/2026-05-08_4b9bd1a3910f_裁员真相.md",
     "video_folder": null,
-    "started_at": "2026-05-07T14:37:00+08:00",
-    "rubric_version": "v1.0"
+    "started_at": "2026-05-08T13:01:00+08:00",
+    "rubric_version": "v1.1"
   },
   "initialized_at": "2026-05-06T10:19:00+08:00",
   "laochen_integration": {
