@@ -1,39 +1,28 @@
-# 老陈说AI · CODEX迁移入口
+# Codex 工作区入口
 
-> 迁移日期：2026-05-23
+本工作区已从 WorkBuddy 迁移到 Codex。当前重点是把内容运营能力改成可复用的“多账号、多平台”结构。
 
----
+## 先读这几个文件
 
-## 快速开始
+1. `AGENTS.md`：当前项目入口，声明规则、账号数据、平台适配的唯一来源。
+2. `docs/architecture/PLATFORM_ADAPTERS.md`：抖音、小红书等平台适配边界。
+3. `docs/architecture/PROJECT_STRUCTURE.md`：目标目录结构和分阶段迁移路线。
+4. `SKILLS_BACKUP/laochen-core/`：通用运营流程 skill 备份。
+5. `C:/Users/86151/.codex/skills/`：Codex 实际运行使用的已安装 skill。
 
-### 1. 先读这个
-👉 **[MIGRATION.md](./MIGRATION.md)** — 完整迁移指南，包含所有铁律、错误记录、用户偏好
+## 当前原则
 
-### 2. 再装SKILL
-👉 **[SKILLS_LIST.md](./SKILLS_LIST.md)** — 35个可安装SKILL的依赖清单和安装顺序 + 3个身份配置文件
+- 通用规则/流程放在 skill。
+- 账号人设、账号数据、平台数据不写进通用 skill。
+- 抖音、小红书等平台规则走平台适配层。
+- `.workbuddy/memory/MEMORY.md` 只做状态索引，不做数据真值来源。
+- 历史迁移文档只做参考，不再作为当前规则入口。
 
-### 3. SKILL文件在这里
-👉 **[SKILLS_BACKUP/](./SKILLS_BACKUP/)** — 所有SKILL的备份副本
+## 下一步
 
-### 4. 内容资产在这里
-👉 **[抖音账号运营模板包/](./抖音账号运营模板包/)** — 已发布方案、待拍摄脚本、数据存档
+按 `docs/superpowers/plans/2026-05-23-multiplatform-structure.md` 执行：
 
-### 5. 脚本在这里
-👉 **[scripts/](./scripts/)** — 32个活跃脚本 + archive/历史版本
-
----
-
-## 环境依赖
-
-- Python 3.x（数据分析和脚本）
-- Node.js（部分工具）
-- 抖音账号登录（数据导出用）
-- Git（版本控制·GitHub: chenxkj/workbuddy-workspace）
-
----
-
-## 当前状态
-
-- 账号粉丝：1031（截至2026-05-18）
-- 待拍摄：6条（程序员职场系列）
-- 账号定位：用程序员方法论解决职场问题
+1. 建立 `platforms/` 和 `accounts/` 新骨架。
+2. 先迁移索引和预测类文件。
+3. 再迁移抖音内容资产。
+4. 最后归档旧迁移资料和历史目录。
