@@ -8,6 +8,7 @@ __pycache__/
 node_modules/
 .npm/
 .pnpm/
+outputs/
 
 # 日志
 *.log
@@ -16,6 +17,8 @@ logs/
 # 临时文件
 *.tmp
 *.temp
+wechat_article*.html
+cover-preview.html
 .DS_Store
 Thumbs.db
 

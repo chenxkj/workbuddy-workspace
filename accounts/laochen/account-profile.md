@@ -10,11 +10,11 @@
 | 抖音作品数据 | `C:/Users/86151/Downloads/作品列表.xlsx` |
 | 抖音时间点数据 | `抖音账号运营模板包/00_数据存档/关键数据时间点.md` |
 | 内容总控 | `accounts/laochen/CONTENT_PLAN.md` |
-| 状态索引 | `.workbuddy/memory/MEMORY.md` |
+| 状态索引 | `accounts/laochen/STATE.md` |
 
 ## 迁移说明
 
-后续进入目录重构 Phase 2 后，再把老陈账号数据迁入：
+后续进入目录重构 Phase 2 后，再把老陈账号数据进一步细分迁入：
 
 ```text
 accounts/laochen/platforms/douyin/data/
@@ -23,4 +23,4 @@ accounts/laochen/platforms/douyin/predictions/
 accounts/laochen/platforms/douyin/reviews/
 ```
 
-迁移前不得删除旧目录，避免现有脚本和复盘路径断裂。
+旧 WorkBuddy 运行时目录已不再作为当前项目依赖。迁移新电脑时按 `docs/migration/CODEX_MACHINE_MIGRATION.md` 执行。

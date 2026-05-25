@@ -15,22 +15,22 @@
   "pool_status": "markdown",
   "pool_path": "c:/Users/86151/WorkBuddy/20260411163952/抖音账号运营模板包/04_方案案例/",
   "data_layer": "markdown",
-  "hooks_installed": true,
+  "hooks_installed": false,
   "enabled_trend_sources": [
     "manual-paste"
   ],
   "enabled_perf_adapters": [],
   "last_bump_at": null,
   "last_bump_self_audited": false,
-  "last_published_at": "2026-05-22T22:47:38+08:00",
-  "last_published_file": "04_方案案例/已发布/聊职场-选错offer只看工资是错的.md",
-  "last_retro_at": "2026-05-23T16:30:00+08:00",
+  "last_published_at": "2026-05-24T21:12:40+08:00",
+  "last_published_file": "04_方案案例/已发布/聊职场-谈薪资第一步别先把自己放低了.md",
+  "last_retro_at": "2026-05-25T11:04:00+08:00",
   "last_trends_run_at": null,
   "last_trends_added_count": 0,
   "consecutive_directional_errors": [
     "low"
   ],
-  "last_retro_deviation": 1.3,
+  "last_retro_deviation": 1.56,
   "pending_retros": [],
   "shoots": [],
   "in_progress_session": null,
@@ -131,16 +131,28 @@
         "note": "T+3d稳定数据。2s跳出41.43%，5s完播32.97%，开头失败结论不变；播放从649长尾到1424，收藏13说明简历公式有保存价值，但搜索长尾救不了冷启动"
       },
       "选offer只看工资v9": {
-        "plays": 1624,
-        "completion_rate": 2.31,
-        "five_sec_rate": 46.42,
-        "saves": 7,
+        "plays": 1952,
+        "completion_rate": 2.67,
+        "five_sec_rate": 44.43,
+        "saves": 8,
         "shares": 0,
-        "comments": 8,
-        "likes": 29,
+        "comments": 9,
+        "likes": 33,
         "followers": 2,
         "type": "B类方法论",
-        "note": "T+17h初步复盘。播放量基本命中预测，2s跳出25.04%、5s完播46.42%证明钩子有效；完播2.31%、分享0，问题在中段方法论讲课感和扩散句不足"
+        "note": "T+3d稳定数据。播放从1624长尾到1952，预测中枢1248→实际1.56x，播放低估；5s完播44.43%仍证明钩子有效；完播2.67%、分享0，问题仍在中段方法论讲课感和扩散不足"
+      },
+      "谈薪资心理建设v1": {
+        "plays": 618,
+        "completion_rate": 5.79,
+        "five_sec_rate": 40.87,
+        "saves": 3,
+        "shares": 0,
+        "comments": 5,
+        "likes": 17,
+        "followers": 0,
+        "type": "A类观点短口播",
+        "note": "T+14h弱校准样本：预测为发布后、看数据前，不计入严格盲预测池。bucket基础盘命中但播放高估（中枢1000→实际618）；5s命中，完播高于预期，主页访问0和涨粉0说明纯心理建设不能作为涨粉主力"
       }
     }
   }

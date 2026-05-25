@@ -23,7 +23,7 @@ workspace/
     laochen/
       account-profile.md
       CONTENT_PLAN.md
-      state.md
+      STATE.md
       platforms/
         douyin/
           data/
@@ -47,9 +47,6 @@ workspace/
     templates/
   archive/
     migration/
-    legacy-workbuddy/
-  .workbuddy/
-    memory/
 ```
 
 ## 当前到目标的映射
@@ -64,8 +61,8 @@ workspace/
 | `predictions/` | `accounts/laochen/platforms/douyin/predictions/` | 第二阶段迁移 |
 | `rubric_notes.md` / `script_patterns.md` / `.cheat-state.json` | `accounts/laochen/platforms/douyin/` 或账号根状态 | 第二阶段迁移 |
 | `scripts/` | `shared/scripts/active/` | 先清单化，再迁移 |
-| `archive/` | `archive/legacy-workbuddy/` | 第三阶段整理 |
-| `.workbuddy/memory/MEMORY.md` | `accounts/laochen/state.md` 的过渡索引 | 暂保留，后续只做索引 |
+| `archive/` | `archive/migration/` | 只保留必要历史参考；旧 WorkBuddy 归档已清理 |
+| `accounts/laochen/STATE.md` | 账号状态索引 | 当前状态索引；不保存数据真值 |
 
 ## 迁移阶段
 
@@ -94,7 +91,7 @@ workspace/
 
 ### Phase 3：清理历史目录
 
-- 将旧 WorkBuddy 迁移资料归入 `archive/migration/`。
+- 删除旧 WorkBuddy 运行时目录，必要迁移说明保留在 `docs/migration/`。
 - 将不用的脚本归入 `shared/scripts/archive/`。
 - `CODEX_README.md` 只保留当前入口，不再承载迁移历史。
 

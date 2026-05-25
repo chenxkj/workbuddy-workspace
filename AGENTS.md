@@ -13,8 +13,8 @@
 | 当前内容总控 | `accounts/laochen/CONTENT_PLAN.md` | 当前账号整体状态、系列计划、选题优先级唯一来源 |
 | 当前账号作品数据 | `C:/Users/86151/Downloads/作品列表.xlsx` | 当前账号项目数据 |
 | 当前账号时间点数据 | `抖音账号运营模板包/00_数据存档/关键数据时间点.md` | 当前账号项目数据 |
-| 当前项目状态索引 | `.workbuddy/memory/MEMORY.md` | 当前工作区，只做索引，不作为数据真值来源 |
-| 错误/修正记录 | `.workbuddy/memory/corrections.jsonl`、`.workbuddy/memory/errors.jsonl` | 当前工作区 |
+| 当前项目状态索引 | `accounts/laochen/STATE.md` | 当前工作区，只做索引，不作为数据真值来源 |
+| 错误/修正记录 | `.learnings/LEARNINGS.md`、`.learnings/ERRORS.md` | 当前工作区 |
 | 迁移资料 | `MIGRATION.md`、`SKILLS_LIST.md` | 历史参考，不作为活跃规则或账号数据来源 |
 | 评分/脚本状态 | `rubric_notes.md`、`script_patterns.md`、`.cheat-state.json` | 当前账号项目，后续迁入 `accounts/laochen/platforms/douyin/` |
 
@@ -24,7 +24,7 @@
 2. 平台规则不得写入账号人设文件。
 3. 账号数据不得写入通用 skill 或平台适配规则。
 4. 抖音数据和小红书数据必须分开放，不能共用一个作品表。
-5. `.workbuddy/memory/MEMORY.md` 只记录状态和路径索引，不保存数值真值。
+5. `accounts/laochen/STATE.md` 只记录状态和路径索引，不保存数值真值。
 6. 后续新增账号时，只复用通用 skill 和平台适配，不复制老陈账号数据。
 7. 内容规划、系列进度、选题池、优先级只维护在 `accounts/laochen/CONTENT_PLAN.md`，其他文件只做来源或单项产物。
 
@@ -75,5 +75,5 @@
 
 - 根目录入口文件存在：`AGENTS.md`、`CODEX_README.md`。
 - 架构规划存在：`docs/architecture/PLATFORM_ADAPTERS.md`、`docs/architecture/PROJECT_STRUCTURE.md`。
-- 关键目录存在：`SKILLS_BACKUP/`、`抖音账号运营模板包/`、`scripts/`、`predictions/`、`.workbuddy/`。
+- 关键目录存在：`SKILLS_BACKUP/`、`抖音账号运营模板包/`、`scripts/`、`predictions/`、`accounts/laochen/`。
 - Codex 技能目录包含可用的 `laochen-status` 和核心 `laochen-*` skills。
